@@ -38,7 +38,7 @@ public class BookDaoImpl implements BookDao{
     public BookEntity get(String id) throws Exception {
          ResultSet rst = CrudUtil.executeQuery("SELECT * FROM book WHERE BookCode =?", id);
          if(rst.next()){
-             BookEntity entity=new BookEntity(rst.getString("BookCode"),rst.getString("Description"),rst.getString("Author"),rst.getString("BookQty"),rst.getString("CategorieCode"));
+             BookEntity entity=new BookEntity(rst.getString("BookCode"),rst.getString("Description"),rst.getString("Author"),rst.getInt("BookQty"),rst.getString("CategorieCode"));
              return entity;
          }
          return null;
@@ -49,7 +49,7 @@ public class BookDaoImpl implements BookDao{
         ArrayList<BookEntity> bookEntity=new ArrayList<>();
         ResultSet rst=CrudUtil.executeQuery("SELECT * FROM book");
         while(rst.next()){
-            BookEntity entity=new BookEntity(rst.getString("BookCode"),rst.getString("Description"),rst.getString("Author"),rst.getString("BookQty"),rst.getString("CategorieCode"));
+            BookEntity entity=new BookEntity(rst.getString("BookCode"),rst.getString("Description"),rst.getString("Author"),rst.getInt("BookQty"),rst.getString("CategorieCode"));
             bookEntity.add(entity);
         }
         return bookEntity;

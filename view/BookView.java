@@ -324,7 +324,7 @@ public class BookView extends javax.swing.JFrame {
     
     private void save(){
         try{
-            BookDto dto=new BookDto(txtCode.getText(),txtDescription.getText(),txtAuthor.getText(),txtQty.getText(),txtCatCode.getText());
+            BookDto dto=new BookDto(txtCode.getText(),txtDescription.getText(),txtAuthor.getText(),Integer.parseInt(txtQty.getText()),txtCatCode.getText());
             String resp=BOOK_CONTROLLER.save(dto);
             JOptionPane.showMessageDialog(this, resp);
             clearForm();
@@ -336,7 +336,7 @@ public class BookView extends javax.swing.JFrame {
     
     private void update(){
         try{
-            BookDto dto=new BookDto(txtCode.getText(),txtDescription.getText(),txtAuthor.getText(),txtQty.getText(),txtCatCode.getText());
+            BookDto dto=new BookDto(txtCode.getText(),txtDescription.getText(),txtAuthor.getText(),Integer.parseInt(txtQty.getText()),txtCatCode.getText());
             String resp=BOOK_CONTROLLER.update(dto);
             JOptionPane.showMessageDialog(this, resp);
             clearForm();
@@ -388,7 +388,7 @@ public class BookView extends javax.swing.JFrame {
                 txtCode.setText(dto.getBkCode());
                 txtDescription.setText(dto.getBkDep());
                 txtAuthor.setText(dto.getBkAuthor());
-                txtQty.setText(dto.getBkQty());
+                txtQty.setText(dto.getBkQty().toString());
                 txtCatCode.setText(dto.getBkCatCode());
             } else {
                 JOptionPane.showMessageDialog(this, "Item not found");
