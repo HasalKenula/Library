@@ -8,7 +8,7 @@ import edu.ijse.dao.CrudUtil;
 import edu.ijse.dao.custom.BorrowDetailDao;
 import edu.ijse.entity.BorrowDetailEntity;
 import java.util.ArrayList;
-
+import java.sql.ResultSet;
 /**
  *
  * @author User
@@ -33,7 +33,8 @@ public class BorrowDetailDaoImpl implements BorrowDetailDao{
 
     @Override
     public BorrowDetailEntity get(Object id) throws Exception {
-         return null;
+        
+        return null;
     }
 
     @Override

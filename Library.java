@@ -8,6 +8,7 @@ import edu.ijse.view.BookView;
 import edu.ijse.view.BorrowView;
 import edu.ijse.view.CategorieView;
 import edu.ijse.view.MemberView;
+import edu.ijse.view.ReturnView;
 
 /**
  *
@@ -23,6 +24,7 @@ public class Library {
         new CategorieView().setVisible(true);
         new BookView().setVisible(true);
         new BorrowView().setVisible(true);
+        new ReturnView().setVisible(true);
     }
     
 }

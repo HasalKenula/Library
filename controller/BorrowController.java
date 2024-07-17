@@ -18,4 +18,9 @@ public class BorrowController {
     public String record(BorrowDto borrowDto)throws Exception{
         return borrowService.record(borrowDto);
     }
+    
+    
+    public String getr (String code) throws Exception{
+        return borrowService.getr(code);
+    }
 }

@@ -5,14 +5,12 @@
 package edu.ijse.dao.custom;
 
 import edu.ijse.dao.CrudDao;
-import edu.ijse.entity.BorrowEntity;
+import edu.ijse.entity.ReturnEntity;
 
 /**
  *
  * @author User
  */
-public interface BorrowDao extends CrudDao<BorrowEntity,String> {
-   
+public interface ReturnDao extends CrudDao<ReturnEntity, String> {
     
-    public String getr(String code) throws Exception;
 }

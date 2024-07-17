@@ -4,16 +4,13 @@
  */
 package edu.ijse.service.custom;
 
-import edu.ijse.dto.BorrowDto;
+import edu.ijse.dto.ReturnDto;
 import edu.ijse.service.SuperService;
 
 /**
  *
  * @author User
  */
-public interface BorrowService extends SuperService{
-    public String record(BorrowDto borrowDto)throws Exception;
-    
-    //
-     public String getr(String code) throws Exception;
+public interface ReturnService extends SuperService {
+     public String record(ReturnDto returnDto) throws Exception;
 }

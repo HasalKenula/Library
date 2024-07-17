@@ -8,12 +8,23 @@ import edu.ijse.dao.CrudUtil;
 import edu.ijse.dao.custom.BorrowDao;
 import edu.ijse.entity.BorrowEntity;
 import java.util.ArrayList;
+import java.sql.ResultSet;
 
 /**
  *
  * @author User
  */
 public class BorrowDaoImpl implements BorrowDao{
+
+    @Override
+    public String getr(String code) throws Exception {
+         ResultSet rst = CrudUtil.executeQuery("SELECT BorrowDueDate FROM borrow WHERE BorrowID  =?", code);
+        if (rst.next()) {
+            return (rst.getString("BorrowDueDate"));
+                   
+        }
+        return null;
+    }
 
     @Override
     public String save(BorrowEntity t) throws Exception {
@@ -24,6 +35,7 @@ public class BorrowDaoImpl implements BorrowDao{
     @Override
     public String update(BorrowEntity t) throws Exception {
         return null;
+        
     }
 
     @Override
@@ -40,5 +52,8 @@ public class BorrowDaoImpl implements BorrowDao{
     public ArrayList<BorrowEntity> getAll() throws Exception {
           return null;
     }
+
+   
+   
     
 }

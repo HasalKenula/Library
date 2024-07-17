@@ -17,6 +17,7 @@ import edu.ijse.entity.BorrowEntity;
 import edu.ijse.service.custom.BorrowService;
 import java.sql.Connection;
 
+
 /**
  *
  * @author User
@@ -26,9 +27,13 @@ public class BorrowServiceImpl implements BorrowService {
     private BorrowDao borrowDao=(BorrowDao) DaoFactory.getInstance().getDao(DaoFactory.DaoTypes.BORROW);
     private BorrowDetailDao borrowDetailDao = (BorrowDetailDao) DaoFactory.getInstance().getDao(DaoFactory.DaoTypes.BORROW_DETAIL);
     private BookDao bookDao=(BookDao) DaoFactory.getInstance().getDao(DaoFactory.DaoTypes.BOOK);
-    
+
     @Override
     public String record(BorrowDto borrowDto) throws Exception {
+   
+    
+   
+    
         Connection connection = DBConnection.getInstance().getConnection();
         try {
             connection.setAutoCommit(false);
@@ -87,6 +92,22 @@ public class BorrowServiceImpl implements BorrowService {
         } finally {
             connection.setAutoCommit(true);
         }
+    
+    
+  
+   
     }
+
+    @Override
+    public String getr(String code) throws Exception {
+
+    String entity = borrowDao.getr(code);
+    
+    String dto=(entity);
+    
+    
+    return dto;
+    }
+    
     
 }
