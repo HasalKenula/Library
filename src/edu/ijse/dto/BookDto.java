@@ -12,13 +12,13 @@ public class BookDto {
     private String bkCode;
     private String bkDep;
     private String bkAuthor;
-    private String bkQty;
+    private Integer bkQty;
     private String bkCatCode;
 
     public BookDto() {
     }
 
-    public BookDto(String bkCode, String bkDep, String bkAuthor, String bkQty, String bkCatCode) {
+    public BookDto(String bkCode, String bkDep, String bkAuthor, Integer bkQty, String bkCatCode) {
         this.bkCode = bkCode;
         this.bkDep = bkDep;
         this.bkAuthor = bkAuthor;
@@ -71,14 +71,14 @@ public class BookDto {
     /**
      * @return the bkQty
      */
-    public String getBkQty() {
+    public Integer getBkQty() {
         return bkQty;
     }
 
     /**
      * @param bkQty the bkQty to set
      */
-    public void setBkQty(String bkQty) {
+    public void setBkQty(Integer bkQty) {
         this.bkQty = bkQty;
     }
 

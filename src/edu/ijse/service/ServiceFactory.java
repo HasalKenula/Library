@@ -7,6 +7,8 @@ package edu.ijse.service;
 import edu.ijse.service.custom.impl.MemberServiceImpl;
 import edu.ijse.service.custom.impl.CategorieServiceImpl;
 import edu.ijse.service.custom.impl.BookServiceImpl;
+import edu.ijse.service.custom.impl.BorrowServiceImpl;
+import edu.ijse.service.custom.impl.ReturnServiceImpl;
 
 
 /**
@@ -34,12 +36,16 @@ public class ServiceFactory {
                 return new CategorieServiceImpl();
             case BOOK:
                 return new BookServiceImpl();
+            case BORROW:
+                return new BorrowServiceImpl();
+            case RETURN:
+                return new ReturnServiceImpl();
             default:
                 return null;
         }
     }
     
      public enum ServiceType{
-        MEMBER, CATEGORIE, BOOK
+        MEMBER, CATEGORIE, BOOK,BORROW,RETURN
     }
 }
